@@ -13,8 +13,9 @@ import lombok.Setter;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "categories")
-public class Category {
+@Table(name = "customers")
+public class Customer {
     private Long id;
-    private String description;
+    private String username;
+    private String password;
 }
