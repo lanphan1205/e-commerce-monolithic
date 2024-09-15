@@ -14,10 +14,10 @@ import lombok.Setter;
 @Entity
 @Table(name = "items")
 public class Item {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id")
-    private Product product;
+    @Column(name = "product_id")
+    private Long productId;
     private Integer quantity;
 }

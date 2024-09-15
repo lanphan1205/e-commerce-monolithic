@@ -1,5 +1,6 @@
 package com.lanphan.e_commerce_monolithic.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,10 +10,16 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Review {
-    private Long id;
 
-    private Customer customer;
-    private Product product;
+@Entity
+@Table(name = "reviews")
+public class Review {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Column(name = "customer_id")
+    private Long customerId;
+    @Column(name = "product_id")
+    private Long productId;
     private String description;
 }
