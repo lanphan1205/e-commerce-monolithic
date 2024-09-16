@@ -31,6 +31,12 @@ public class ProductController {
     public Product saveProduct(@RequestBody ProductDTO productDTO) {
         return service.saveProduct(productDTO);
     }
+
+    @GetMapping("/product")
+    @ResponseBody
+    public List<Product> getProductByCategoryId(@RequestParam("categoryId") Long id) {
+        return service.getProductByCategoryId(id);
+    }
 }
 
 

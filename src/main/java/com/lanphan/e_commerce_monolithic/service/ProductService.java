@@ -14,4 +14,5 @@ public interface ProductService {
     Product saveProduct(ProductDTO product);
     List<Product> saveAllProducts(List<ProductDTO> products);
     Product updateProduct(Product product);
+    List<Product> getProductByCategoryId(Long id);
 }

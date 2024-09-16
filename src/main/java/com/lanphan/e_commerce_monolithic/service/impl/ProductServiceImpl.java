@@ -39,8 +39,6 @@ public class ProductServiceImpl implements ProductService {
         return savedProduct;
     }
 
-    //TODO: updateProduct()
-
     @Override
     public List<Product> saveAllProducts(List<ProductDTO> productDTOs) {
         List<Product> products = new ArrayList<>();
@@ -59,5 +57,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product updateProduct(Product product) {
         return productRepository.save(product);
+    }
+
+    @Override
+    public List<Product> getProductByCategoryId(Long id) {
+        return productRepository.getProductByCategoryId(id);
     }
 }
