@@ -6,22 +6,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 
 @Entity
-@Table(name = "items")
-public class Item {
+@Table(name = "carts")
+public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "product_id")
-    private Long productId;
-    @Column(name = "cart_id")
-    private Long cartId;
-    @Column(name = "order_id")
-    private Long orderId;
-    private Integer quantity;
+    @Column(name = "customer_id")
+    private Long customerId;
+    private LocalDateTime createdDate;
 }

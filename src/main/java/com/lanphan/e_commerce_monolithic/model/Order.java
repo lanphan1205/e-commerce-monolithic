@@ -21,4 +21,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private LocalDateTime createdDate;
+    @Column(name = "customer_id")
+    private Long customerId;
+    private String status;
 }
